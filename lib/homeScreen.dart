@@ -1,120 +1,115 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class FontImg extends StatefulWidget {
-  const FontImg({Key? key}) : super(key: key);
+class Photo3 extends StatefulWidget {
+  const Photo3({Key? key}) : super(key: key);
 
   @override
-  State<FontImg> createState() => _FontImgState();
+  State<Photo3> createState() => _Photo3State();
 }
 
-class _FontImgState extends State<FontImg> {
+class _Photo3State extends State<Photo3> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            SizedBox(
-              height: double.infinity,
-              width: double.infinity,
-              child: Image.asset(
-                "assets/images/fontimg.jpeg",
-                fit: BoxFit.fill,
-              ),
-            ),
-            Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  height: 100,
-                  width: double.infinity,
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "/63",
-                        style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Row(
-                        children: [
-                          Text("ATLANTIC",
-                              style: GoogleFonts.mukta(
-                                  textStyle: TextStyle(
-                                      fontSize: 19,
-                                      color: Colors.grey.shade600,
-                                      fontWeight: FontWeight.bold,
-                                      letterSpacing: 1))),
-                          const Spacer(),
-                          Text("Gallery",
-                              style: TextStyle(color: Colors.grey.shade600)),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Transform.rotate(
-                  angle: pi / 2,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Transform.translate(
-                      offset: const Offset(10, 130),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "MRS ADMIN",
-                            style: GoogleFonts.rubik(
-                                fontSize: 18,
-                                color: Colors.grey.shade600,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Capital",
-                            style: GoogleFonts.rubik(
-                              fontSize: 15,
-                              color: Colors.grey.shade600,
-                            ),
-                          ),
-                        ],
-                      ),
+        backgroundColor: Color(0xffCACACA),
+        body: Container(
+          margin: EdgeInsets.all(20),
+          height: double.infinity,
+          width: double.infinity,
+          child: Stack(
+            children: [
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Opacity(
+                    opacity: 0.8,
+                    child: Image.asset(
+                      "assets/images/fontimg.jpeg",
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),
-                Transform.translate(
-                  offset: const Offset(100, 450),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Type of Ratina i",
-                        style: GoogleFonts.rubik(
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text("1947 to 2023",
-                          style: GoogleFonts.rubik(
-                              color: Colors.grey.shade600, fontSize: 9)),
-                    ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 40, left: 250),
+                child: Text(
+                  "Gallary",
+                  style: TextStyle(
+                      color: Colors.black45,
+                      decoration: TextDecoration.underline,
+                      fontSize: 16),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 30, top: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "\/63",
+                      style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "ALTANTIC",
+                      style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 550, left: 200),
+                child: Text(
+                  "Type 010 Retina |",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 570, left: 245),
+                child: Text(
+                  "1946 to 1949",
+                  style: TextStyle(color: Colors.black45, fontSize: 10),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 150, left: 209),
+                child: Transform.rotate(
+                  angle: pi / 2,
+                  child: Text(
+                    "KODAK RETINA",
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black38,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
-                Transform.translate(
-                  offset: const Offset(100, 480),
-                  child: Icon(
-                    Icons.menu,
-                    color: Colors.grey.shade600,
-                  ),
-                ),
-              ],
-            ),
-          ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 132, left: 207),
+                child: Transform.rotate(
+                    angle: pi / 2,
+                    child: Text(
+                      "TYPR 010",
+                      style: TextStyle(fontSize: 15, color: Colors.black26),
+                    )),
+              ),
+            ],
+          ),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
       ),
     );
